@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, trigger, state, style, transition, animate, keyframes } from '@angular/core';
 
 @Component({
   selector: 'app-scoreboard',
   templateUrl: './scoreboard.component.html',
-  styleUrls: ['./scoreboard.component.css']
+  styleUrls: ['./scoreboard.component.css'],
+  animations: [
+    trigger('scoreChange', [
+      transition('* => *', [
+        animate(800, keyframes([
+          style({'background-color': 'black', offset: 0}),
+          style({'background-color': '#26a69a', offset: 0.2}),
+          style({'background-color': 'black', offset: 1.0})
+        ]))
+      ])
+    ])
+  ]
 })
-export class ScoreboardComponent implements OnInit {
+export class ScoreboardComponent  {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  @Input()
+    score;
 
 }

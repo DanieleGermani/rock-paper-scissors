@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input } from '@angular/core';
+import {RockPaperScissors} from '../../enum/rps.enum';
 
 @Component({
   selector: 'app-rps-img',
   templateUrl: './rps-img.component.html',
   styleUrls: ['./rps-img.component.css']
 })
-export class RpsImgComponent implements OnInit {
+export class RpsImgComponent  {
 
-  constructor() { }
+  @Input()
+    option : RockPaperScissors;
 
-  ngOnInit() {
-  }
+    getImageUrl(){
+      let root = 'assets/images/';
+      if(this.option === null)
+        return root + 'question.png';
+      return `${root}${RockPaperScissors[this.option].toLowerCase()}.png`;
+    }
 
 }
