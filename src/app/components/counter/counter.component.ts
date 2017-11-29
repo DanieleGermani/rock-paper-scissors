@@ -12,7 +12,7 @@ import { Component, OnInit,Input, trigger, state, style, transition, animate } f
           opacity: 1
         }),
         animate('1s ease', style({
-          transform: 'scale(3)',
+          transform: 'scale(4)',
           opacity: 0
         }))
       ])
