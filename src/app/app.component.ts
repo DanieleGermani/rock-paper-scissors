@@ -10,18 +10,16 @@ enum GameResult {
   Draw
 }
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [RpsService]
 })
 export class AppComponent {
   GameState = GameState;
   RockPaperScissors = RockPaperScissors;
   GameResult = GameResult;
-  playerOptions = Object.keys(RockPaperScissors).map(x => parseInt(x)).filter(x => x >= 0);
+  playerOptions = Object.keys(RockPaperScissors).map(opcion => parseInt(opcion)).filter(opcion => opcion >= 0);
 
   state = {
     gameState: GameState.Waiting,
@@ -36,6 +34,7 @@ export class AppComponent {
   };
   constructor(private rpsService : RpsService){
   }
+  
   start() {
   Object.assign(this.state, {
     gameState: GameState.Countdown,

@@ -1,7 +1,7 @@
-<div>
+<div >
   <nav>
    <div class="nav-wrapper">
-     <a href="#" class="brand-logo">Rock, Paper, Scissors</a>
+     <h3 class="brand-logo">Rock Paper and Scissors</h3>
    </div>
   </nav>
   <div class="container center-align">
@@ -21,9 +21,9 @@
           <app-rps-img [option]="state.opponentItem"></app-rps-img>
         </div>
         <div class="col s12 result" *ngIf="state.playerItem !== null" [ngSwitch]="state.lastGameResult">
-          <span *ngSwitchCase="GameResult.Win">You Won!</span>
-          <span *ngSwitchCase="GameResult.Loss">You Lost :(</span>
-          <span *ngSwitchCase="GameResult.Draw">Draw</span>
+          <h2 *ngSwitchCase="GameResult.Win">You Won!</h2>
+          <h2 *ngSwitchCase="GameResult.Loss">You Lost :(</h2>
+          <h2 *ngSwitchCase="GameResult.Draw">Draw</h2>
         </div>
         <div class="col s12">
           <button class="btn btn-large" *ngIf="state.playerItem !== null" (click)="start()">Play Again</button>

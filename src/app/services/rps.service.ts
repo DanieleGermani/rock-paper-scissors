@@ -4,10 +4,10 @@ import {RockPaperScissors} from '../enum/rps.enum';
 @Injectable()
 export class RpsService {
 
-  doesBeat(x: RockPaperScissors, y: RockPaperScissors){
-    if(x === y)
+  doesBeat(player1: RockPaperScissors, player2: RockPaperScissors){
+    if(player1 === player2)
       return null;
-    return x == (((y + 1) % 3) || 3);
+    return player1 == (((player2 + 1) % 3) || 3);
   }
 
 }
